@@ -1,0 +1,84 @@
+.sign-up-form {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #d1e7f5;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.sign-up-form h2 {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group .input-container {
+  display: flex;
+  align-items: center;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group button {
+  margin-left: 10px;
+  height: 40px;
+  background-color: #00c853;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group .success-message,
+.form-group .info-message,
+.form-group .error-message {
+  margin-top: 5px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse; /* 체크박스를 오른쪽으로 이동 */
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-left: 10px; /* 체크박스와 라벨 사이의 간격 조정 */
+}
+
+.error-message {
+  text-align: center;
+  color: #d32f2f;
+  margin-top: 10px;
+}
+
+.sign-up-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #d1e7f5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,54 @@
+.edit-history-item {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .edit-history-item h2 {
+    margin-bottom: 20px;
+  }
+  
+  .edit-history-item form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .edit-history-item label {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-history-item textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .form-controls {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-controls button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-controls button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .form-controls button[type="button"] {
+    background-color: #dc3545;
+    color: white;
+  }
+  

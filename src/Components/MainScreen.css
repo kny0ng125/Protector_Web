@@ -1,0 +1,108 @@
+/* MainScreen.css */
+
+/* main-screen: 메인 화면의 전체 레이아웃을 설정 */
+.main-screen {
+  padding: 20px;
+  background-color: #e0f7fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* 화면 전체 높이 설정 */
+  box-sizing: border-box;
+}
+
+/* main-header: 상단 헤더 영역, 환자 추가 버튼과 검색 입력 필드를 포함 */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  width: 100%;
+  max-width: 1200px;
+  border-bottom: 2px solid #ccc;
+}
+
+/* add-patient-button: 환자 추가 버튼의 스타일 */
+.add-patient-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #388e3c;
+  color: white;
+  cursor: pointer;
+}
+
+.add-patient-button:hover {
+  background-color: #2e7d32;
+}
+
+/* search-input: 검색 입력 필드의 스타일 */
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+}
+
+/* search-container: 검색과 정렬 선택 필드를 포함하는 컨테이너 */
+.search-container {
+  display: flex;
+  gap: 10px;
+}
+
+/* search-select: 정렬 선택 필드의 스타일 */
+.search-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* sort-container: 정렬 선택 필드의 스타일 */
+.sort-container {
+  display: flex;
+  gap: 10px;
+}
+
+.sort-label {
+  font-size: 16px;
+  color: #333;
+  line-height: 3; /* Optional: Ensures the label is vertically centered */
+}
+
+
+
+/* sort-select: 정렬 선택 필드의 스타일 */
+.sort-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* patient-container: 환자 목록을 담고 있는 컨테이너, 최대 높이를 설정하고 넘칠 경우 스크롤 */
+.patient-container {
+  width: 100%;
+  max-width: 1200px;
+  max-height: 1200px; /* 최대 높이 설정 */
+  overflow-y: auto; /* 상하 스크롤바 추가 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.favorites-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff9800;
+  color: white;
+  cursor: pointer;
+}
+
+.favorites-button:hover {
+  background-color: #e68900;
+}
