@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SignUp.css';
 import API_BASE_URL from './Config';
 
-const SignUpForm = () => {
+const SignUpFormStep1 = () => {
   const [licenseNumber, setLicenseNumber] = useState('');
   const [account, setAccount] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [agree, setAgree] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
   const [accountValid, setAccountValid] = useState(null);
   const [licenseValid, setLicenseValid] = useState(null);
   const [passwordValid, setPasswordValid] = useState(null);
+  const navigate = useNavigate();
 
   const validatePassword = (password) => {
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
@@ -23,11 +22,10 @@ const SignUpForm = () => {
     try {
       const response = await fetch(`${API_BASE_URL}/doctor/check/account?account=${account}`);
       const data = await response.json();
-      console.log('Account Check Response:', data); // 응답 데이터 확인
-      setAccountValid(data); // 서버가 true/false 값을 반환한다고 가정
+      setAccountValid(data);
     } catch (error) {
       console.error('Error checking account availability:', error);
-      setAccountValid(false); // 오류 발생 시 중복으로 판정
+      setAccountValid(false);
     }
   };
 
@@ -35,62 +33,45 @@ const SignUpForm = () => {
     try {
       const response = await fetch(`${API_BASE_URL}/doctor/check/license-number?licenseNumber=${licenseNumber}`);
       const data = await response.json();
-      console.log('License Check Response:', data); // 응답 데이터 확인
-      setLicenseValid(data); // 서버가 true/false 값을 반환한다고 가정
+      setLicenseValid(data);
     } catch (error) {
       console.error('Error checking license number availability:', error);
-      setLicenseValid(false); // 오류 발생 시 사용 불가능으로 판정
+      setLicenseValid(false);
     }
   };
 
-  const handleSubmit = async (event) => {
+  const handleNext = (event) => {
     event.preventDefault();
 
-    // Basic validation
-    if (!licenseNumber || !account || !password || !confirmPassword || !agree) {
-      setError('모든 필드를 채워주시고, 개인정보 이용에 동의해주세요.');
+    if (!licenseNumber || !account || !password || !confirmPassword) {
+      alert('모든 필드를 채워주세요.');
       return;
     }
 
     if (password !== confirmPassword) {
-      setError('비밀번호가 일치하지 않습니다.');
+      alert('비밀번호가 일치하지 않습니다.');
       return;
     }
 
-    try {
-      const response = await fetch(`${API_BASE_URL}/doctor/signup`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          licenseNumber,
-          account,
-          password,
-        }),
-      });
-
-      if (response.ok) {
-        setSuccess('회원가입이 완료되었습니다. 잠시 후 로그인 페이지로 이동합니다.');
-        setError('');
-        setTimeout(() => {
-          window.location.href = '/login';
-        }, 3000);
-      } else {
-        setError('회원가입에 실패했습니다.');
-        setSuccess('');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setError('서버와의 통신에 실패했습니다.');
-      setSuccess('');
+    if (!passwordValid) {
+      alert('유효한 비밀번호를 입력하세요.');
+      return;
     }
+
+    // 모든 정보가 유효하다면 2차 정보 입력 페이지로 이동
+    navigate('/signup-step2', { 
+      state: { 
+        licenseNumber, 
+        account, 
+        password 
+      } 
+    });
   };
 
   return (
     <div className="sign-up-form">
       <h2>회원 가입</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleNext}>
         <div className="form-group">
           <label>아이디</label>
           <div className="input-container">
@@ -156,24 +137,10 @@ const SignUpForm = () => {
             <p className="error-message">✖ 비밀번호가 일치하지 않습니다.</p>
           )}
         </div>
-        <div className="form-group checkbox-group">
-          <input
-            type="checkbox"
-            id="agree"
-            checked={agree}
-            onChange={(e) => setAgree(e.target.checked)}
-          />
-          <label htmlFor="agree">개인정보 이용에 동의합니다.</label>
-        </div>
-        {!agree && (
-          <p className="error-message">개인정보 이용에 동의해주셔야 합니다.</p>
-        )}
-        <button type="submit">가입하기</button>
-        {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>}
+        <button type="submit">다음 단계</button>
       </form>
     </div>
   );
 };
 
-export default SignUpForm;
+export default SignUpFormStep1;

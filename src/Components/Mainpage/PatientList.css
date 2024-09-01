@@ -1,0 +1,33 @@
+/* PatientList.css */
+
+.patient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0 10px;
+  color: #007bff;
+}
+
+.pagination-arrow:disabled {
+  display: none; /* 비활성화된 버튼은 보이지 않도록 */
+}
+
+.pagination-info {
+  margin: 0 15px;
+  font-size: 1.0em;
+  color: #999;
+}

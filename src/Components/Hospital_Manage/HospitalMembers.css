@@ -1,0 +1,115 @@
+/* HospitalMembers.css */
+.hospital-members {
+    padding: 20px;
+    background-color: #e0f7fa;
+    width: 100%; /* 배경이 화면에 꽉 차도록 설정 */
+    height: 1200px;
+    margin: 0; /* 좌우 여백 제거 */
+}
+
+.hospital-members h1 {
+    text-align: center;
+}
+
+.controls {
+    width: 90%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 20px auto;
+    margin-bottom: 20px;
+}
+
+.sort-controls {
+    display: flex;
+    align-items: center;
+}
+
+.sort-controls label {
+    margin-right: 10px;
+}
+
+.sort-controls select {
+    border: 1px solid white; /* 경계선을 흰색으로 설정 */
+    padding: 8px; /* 박스 내부 여백을 조절하여 사이즈 키움 */
+    border-radius: 5px; /* 모서리를 둥글게 설정 */
+    font-size: 14px; /* 글자 크기 조정 */
+    background-color: #ffffff; /* 배경색 설정 */
+}
+
+.sort-controls button {
+    margin-left: 10px;
+}
+
+.members-table {
+    width: 90%; /* 테이블을 좌우로 좁게 조정 */
+    max-width: 1400px; /* 테이블의 최대 폭을 1400px로 제한 */
+    border-collapse: collapse;
+    margin: 0 auto 20px auto; /* 중앙 정렬 및 아래쪽 여백 */
+    border-radius: 5px;
+}
+
+.members-table th,
+.members-table td {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 8px;
+    text-align: left;
+}
+
+.members-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.pagination {
+    color: #777;
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    margin: 20px 0; /* 위아래 여백 추가 */
+    flex-shrink: 0; /* 테이블 공간이 부족해져도 Pagination의 크기가 줄어들지 않도록 설정 */
+}
+
+.pagination button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 요청 버튼 스타일 */
+.request-button {
+    color: green; /* 초록색 폰트 */
+    font-weight: bold; /* 폰트 굵게 */
+    cursor: pointer; /* 커서 모양 변경 */
+}
+
+.table-container {
+    flex-grow: 1; /* 공간을 유연하게 차지하도록 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px; /* 최소 높이 설정 */
+}
+
+.action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ff4d4f; /* 아이콘의 색상을 빨간색으로 설정 */
+    margin-left: 5px; /* 약간의 간격을 줘서 버튼이 서로 붙지 않도록 */
+  }
+  
+  .action-button:hover {
+    color: #d9363e; /* 호버 시 색상 변경 */
+  }
+  

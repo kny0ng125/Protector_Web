@@ -1,0 +1,35 @@
+.health-info-page {
+  display: flex; /* 요소를 flex 컨테이너로 설정하여 내부 아이템을 정렬 */
+  flex-direction: column; /* 내부 요소들을 세로로 정렬 */
+  align-items: center; /* 내부 아이템들을 가로 방향 가운데 정렬 */
+  padding: 20px; /* 모든 방향에 20px의 패딩을 추가 */
+  background-color: #e0f7fa; /* 배경색을 연한 하늘색으로 설정 */
+  min-height: 100vh; /* 최소 높이를 화면 전체 높이로 설정하여 페이지를 가득 채움 */
+}
+
+.top-section {
+  display: flex; /* 요소를 flex 컨테이너로 설정하여 내부 아이템을 정렬 */
+  gap: 50px;
+  width: 100%; /* 전체 너비를 부모 요소의 100%로 설정 */
+  max-width: 1200px; /* 최대 너비를 1200px로 제한 */
+  margin-bottom: 20px; /* 아래쪽에 20px의 여백 추가 */
+}
+
+.patient-info,
+.calendar {
+  flex: 1; /* 동일한 비율로 공간을 차지하게 설정 */
+  margin: 0 10px; /* 좌우에 각각 10px의 여백 추가 */
+  background-color: white; /* 배경색을 흰색으로 설정 */
+  padding: 20px; /* 모든 방향에 20px의 패딩을 추가 */
+  border-radius: 10px; /* 모서리를 둥글게 10px로 설정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가로 입체감 부여 */
+}
+
+.charts-section {
+  width: 100%; /* 전체 너비를 부모 요소의 100%로 설정 */
+  max-width: 1800px; /* 최대 너비를 1200px로 제한 */
+  display: grid; /* 그리드 레이아웃을 사용하여 아이템 배치 */
+  grid-template-columns: repeat(3, 1fr); /* 한 줄에 3개의 컬럼을 동일한 너비로 배치 */
+  gap: 20px; /* 차트 간의 간격을 20px로 설정 */
+}
+

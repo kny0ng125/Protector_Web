@@ -1,0 +1,123 @@
+.request-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* 모달의 기본 너비 */
+    height: 700px; /* 모달의 기본 높이 */
+    max-width: 95%;
+    position: relative;
+    text-align: left;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #6C757D;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    width: 105%; /* 의사 박스 너비를 넓게 설정 */
+    box-sizing: border-box; /* 패딩 포함 크기 설정 */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px; /* 이미지와 텍스트 사이 간격 증가 */
+}
+
+.profile-placeholder {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin-right: 15px; /* 이미지와 텍스트 사이 간격 증가 */
+}
+
+.profile-info {
+    flex: 2; /* 프로필 정보를 더 넓게 표시 */
+    min-width: 150px; /* 최소 너비 설정 */
+}
+
+.profile-info p {
+    margin: 0;
+    font-size: 16px;
+    color: #6C757D;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px; /* 버튼 사이 간격 증가 */
+}
+
+.accept-button, .decline-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.accept-button {
+    color: #28a745; /* 초록색 (수락) */
+}
+
+.decline-button {
+    color: #dc3545; /* 빨간색 (거절) */
+}
+
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f4c3;
+    color: #666;
+    text-align: center;
+    border-radius: 5px;
+  }

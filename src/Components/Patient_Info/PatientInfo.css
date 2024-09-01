@@ -1,0 +1,29 @@
+.patient-info {
+  background-color: white; /* 배경색을 흰색으로 설정 */
+  padding: 20px; /* 내부 여백을 20px로 설정 */
+  border-radius: 10px; /* 모서리를 둥글게 설정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+  width: 100%; /* 전체 너비를 채우도록 설정 */
+  max-width: 600px; /* 최대 너비를 400px로 제한 */
+  margin: 0 auto; /* 중앙 정렬 */
+  text-align: left; /* 텍스트를 왼쪽 정렬 */
+}
+
+.patient-info h2 {
+  font-size: 24px; /* 헤더 글씨 크기를 24px로 설정 */
+  font-weight: bold; /* 글씨 굵기를 굵게 설정 */
+  margin-bottom: 30px; /* 아래쪽 여백을 15px로 설정 */
+  color: #333; /* 글씨 색상을 짙은 회색으로 설정 */
+  text-align: center;
+}
+
+.patient-info p {
+  font-size: 16px; /* 정보 텍스트 크기를 16px로 설정 */
+  margin-bottom: 10px; /* 아래쪽 여백을 10px로 설정 */
+  color: #555; /* 글씨 색상을 중간 회색으로 설정 */
+}
+
+.patient-info p span {
+  font-weight: bold; /* 정보 레이블을 굵게 설정 */
+  color: #000; /* 레이블 색상을 검정으로 설정 */
+}
