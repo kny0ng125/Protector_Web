@@ -1,0 +1,37 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .chart-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* 너비를 90%로 설정하여 더 크게 표시 */
+    max-width: 1200px; /* 최대 너비를 1000px로 설정 */
+    height: 80%; /* 높이를 80%로 설정하여 더 크게 표시 */
+    max-height: 800px; /* 최대 높이를 800px로 설정 */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  

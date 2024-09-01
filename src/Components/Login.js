@@ -28,20 +28,33 @@ const LoginForm = () => {
         body: JSON.stringify({
           account,
           password,
-        }),
+        }), 
       });
 
-      const data = await response.json();
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData.message || '로그인에 실패했습니다.');
+        return;
+      }
 
-      if (response.ok) {
-        const refreshToken = response.headers.get('x-refresh-token');
-        login(data.accessToken, refreshToken);
-        navigate('/mainscreen'); // 로그인 성공 시 메인 스크린으로 이동
+      const data = await response.json();
+  
+      // 로그 추가: 응답 및 토큰 데이터 로그 출력
+      console.log('Login response:', response);
+      console.log('Received Tokens:', data);
+      
+      const { accessToken, refreshToken } = data;
+
+      if (accessToken && refreshToken) {
+        // 로그인 성공 시 액세스 토큰과 리프레시 토큰을 저장하고 메인 스크린으로 이동
+        login(accessToken, refreshToken);
+        navigate('/mainscreen'); 
       } else {
-        setError(data.message || '로그인에 실패했습니다.');
+        setError('토큰을 받아오지 못했습니다.');
       }
     } catch (error) {
       setError('서버와의 통신에 실패했습니다.');
+      console.error('Error during login:', error);
     }
   };
 

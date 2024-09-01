@@ -4,19 +4,18 @@ import { AuthContext } from './AuthContext';
 import './Navbar.css';
 
 const Navbar = () => {
-  const { isAuthenticated, logout, toggleAuth } = useContext(AuthContext);
+  const { isAuthenticated, logout } = useContext(AuthContext);
 
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        {isAuthenticated && <Link to="/mainscreen">Home</Link>}
-        {isAuthenticated && <Link to="/history" className="navbar-button">History</Link>}
-        {isAuthenticated && <Link to="/health-info" className="navbar-button">Info</Link>}
+        {isAuthenticated && <Link to="/mainscreen" className="navbar-button">Home</Link>}
+        {isAuthenticated && <Link to="/hospital" className="navbar-button">Hospital</Link>}
       </div>
       <div className="navbar-right">
         {isAuthenticated ? (
           <>
-            <span className="navbar-user">Doctor1</span>
+            <span className="navbar-user">정재욱</span>
             <button onClick={logout} className="navbar-button">로그아웃</button>
           </>
         ) : (

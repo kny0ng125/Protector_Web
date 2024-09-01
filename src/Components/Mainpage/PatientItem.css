@@ -1,0 +1,51 @@
+.patient-item {
+  height: auto; /* 높이 자동 조정 */
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.patient-item:hover {
+  background-color: #e0f7fa;
+}
+
+.patient-infobutton {
+  display: flex;
+  flex-direction: column; /* 세로로 나열 */
+  justify-content: center; /* 수직 중앙 정렬 */
+  height: 60px;
+  padding: 7px;
+  margin: 7px;
+}
+
+.patient-name {
+  font-weight: bold;
+  color: #00796b;
+  font-size: 1.2em;
+}
+
+.patient-id {
+  display: block;
+  color: #888;
+}
+
+.patient-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* 오른쪽 정렬 */
+}
+
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 30px;
+}
