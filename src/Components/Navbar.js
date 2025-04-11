@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="navbar-right">
         {isAuthenticated ? (
           <>
-            <span className="navbar-user">정재욱</span>
+            <span className="navbar-user">정아무개</span>
             <button onClick={logout} className="navbar-button">로그아웃</button>
           </>
         ) : (

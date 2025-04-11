@@ -9,6 +9,7 @@
     "axios": "^1.7.2",
     "chart.js": "^4.4.4",
     "chartjs-adapter-date-fns": "^3.0.0",
+    "protector_client": "file:",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
